@@ -109,6 +109,15 @@
         align-items: center;
         justify-content: center;
     }
+    .android{
+        width: 450px;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('./images/qrCodeBg.png') no-repeat center;
+        background-size: auto 100%;
+    }
 </style>
 <body>
 <div class="content">
@@ -119,7 +128,10 @@
                 <img src="images/haobao.png" width="580" alt="haobao">
             </div>
             <div class="qrCodeDiv hide">
-                <img src="./images/qrCode.png" alt="">
+                <img src="./images/qrCode.png"  alt="">
+            </div>
+            <div class="android hide">
+                <img src="./images/android-qrcode.png" width="210" height="210" >
             </div>
         </div>
         <span class="divide"></span>
@@ -144,20 +156,25 @@
                 var type = e.target.getAttribute('data-type');
                 var pagesDiv = document.querySelector('.appPage');
                 var qrCodeDiv = document.querySelector('.qrCodeDiv');
+                var android = document.querySelector('.android');
                 switch (type) {
                     case 'ios':
                         pagesDiv.classList.add('hide');
                         qrCodeDiv.classList.remove('hide');
+                        android.classList.add('hide');
                         window.open("https://www.pgyer.com/TngD?sig=CNWpBxeW36zHH056M3bA6Ye1nLJgGcudNMRGOU2mZV6GIJvGPgUBeUTsHdakxtsq");     
                         break;
                     case 'android':
                         pagesDiv.classList.add('hide');
-                        qrCodeDiv.classList.remove('hide');
-                        window.open("https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk");     
+                        qrCodeDiv.classList.add('hide');
+                        android.classList.remove('hide');
+                        // window.open("https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk");     
+                        // location.href='https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk'
                         break;
                     case 'local':
                         pagesDiv.classList.remove('hide');
                         qrCodeDiv.classList.add('hide');
+                        android.classList.add('hide');
                         window.open("https://github.com/OTCGO/sea-app/releases");     
                         break;
                 }
