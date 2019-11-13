@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>下载页面</title>
@@ -10,7 +11,8 @@
         padding: 0;
     }
 
-    html, body {
+    html,
+    body {
         width: 100%;
         height: 100%;
         min-height: 600px;
@@ -48,7 +50,8 @@
         display: inline-block;
     }
 
-    .downLoadType, .typeItem {
+    .downLoadType,
+    .typeItem {
         list-style: none;
     }
 
@@ -83,7 +86,8 @@
         margin-top: 20px;
     }
 
-    .typeItem:hover, .typeItem.active {
+    .typeItem:hover,
+    .typeItem.active {
         background: #135CD7;
         color: #fff
     }
@@ -109,7 +113,8 @@
         align-items: center;
         justify-content: center;
     }
-    .android{
+
+    .android {
         width: 450px;
         height: 600px;
         display: flex;
@@ -119,41 +124,43 @@
         background-size: auto 100%;
     }
 </style>
+
 <body>
-<div class="content">
-    <a href="https://otcgo.cn"><img class="logo" height="70" src="./images/logo.svg" alt="logo"></a>
-    <div class="container">
-        <div class="left">
-            <div class="appPage">
-                <img src="images/haobao.png" width="580" alt="haobao">
+    <div class="content">
+        <a href="https://otcgo.cn"><img class="logo" height="70" src="./images/logo.svg" alt="logo"></a>
+        <div class="container">
+            <div class="left">
+                <div class="appPage">
+                    <img src="images/haobao.png" width="580" alt="haobao">
+                </div>
+                <div class="qrCodeDiv hide">
+                    <img src="./images/qrCode.png" alt="">
+                </div>
+                <div class="android hide">
+                    <img src="./images/android-qrcode.png" width="210" height="210">
+                </div>
             </div>
-            <div class="qrCodeDiv hide">
-                <img src="./images/qrCode.png"  alt="">
+            <span class="divide"></span>
+            <div class="">
+                <h2 class="h2">SEA官方APP正式发布</h2>
+                <p class="text">选择一个你所需要的下载方式</p>
+                <ul id="downLoadType" class="downLoadType">
+                    <li data-type="ios" class="typeItem">iOS版本下载 密码: 123456</li>
+                    <li data-type="android" class="typeItem">安卓版本下载</li>
+                    <li data-type="win" class="typeItem">WINDOWS下载</li>
+                    <li data-type="mac" class="typeItem">MAC下载</li>
+                    <!-- <li data-type="local" class="typeItem">本地下载</li> -->
+                </ul>
             </div>
-            <div class="android hide">
-                <img src="./images/android-qrcode.png" width="210" height="210" >
-            </div>
-        </div>
-        <span class="divide"></span>
-        <div class="">
-            <h2 class="h2">SEA官方APP正式发布</h2>
-            <p class="text">选择一个你所需要的下载方式</p>
-            <ul id="downLoadType" class="downLoadType">
-                <li data-type="ios" class="typeItem">iOS版本下载</li>
-                <li data-type="android" class="typeItem">安卓版本下载</li>
-                <li data-type="win" class="typeItem">WINDOWS下载</li>
-                <li data-type="mac" class="typeItem">MAC下载</li>
-                <!-- <li data-type="local" class="typeItem">本地下载</li> -->
-            </ul>
         </div>
     </div>
-</div>
 </body>
 <script>
     window.onload = function () {
         document.querySelector('#downLoadType').addEventListener('click', function (e) {
             if (e.target.nodeName === 'LI') {
-                e.target.parentNode.querySelector('.active') && e.target.parentNode.querySelector('.active').classList.remove('active');
+                e.target.parentNode.querySelector('.active') && e.target.parentNode.querySelector('.active')
+                    .classList.remove('active');
                 e.target.classList.add('active');
                 var type = e.target.getAttribute('data-type');
                 var pagesDiv = document.querySelector('.appPage');
@@ -171,24 +178,25 @@
                         pagesDiv.classList.add('hide');
                         qrCodeDiv.classList.add('hide');
                         android.classList.remove('hide');
-                        window.open("https://www.pgyer.com/mCWD");     
+                        window.open("https://www.pgyer.com/mCWD");
                         // location.href='https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk'
                         break;
-                    case 'win':   
-                        location.href='https://otcgo.oss-cn-beijing.aliyuncs.com/SEA-win32-x64.zip'
+                    case 'win':
+                        location.href = 'https://otcgo.oss-cn-beijing.aliyuncs.com/SEA-win32-x64.zip'
                         break;
-                    case 'mac':   
-                        location.href='https://otcgo.oss-cn-beijing.aliyuncs.com/APP.app.zip'
-                        break;                      
-                    // case 'local':
-                    //     pagesDiv.classList.remove('hide');
-                    //     qrCodeDiv.classList.add('hide');
-                    //     android.classList.add('hide');
-                    //     window.open("https://github.com/OTCGO/sea-app/releases");     
-                    //     break;
+                    case 'mac':
+                        location.href = 'https://otcgo.oss-cn-beijing.aliyuncs.com/APP.app.zip'
+                        break;
+                        // case 'local':
+                        //     pagesDiv.classList.remove('hide');
+                        //     qrCodeDiv.classList.add('hide');
+                        //     android.classList.add('hide');
+                        //     window.open("https://github.com/OTCGO/sea-app/releases");     
+                        //     break;
                 }
             }
         });
     };
 </script>
+
 </html>
