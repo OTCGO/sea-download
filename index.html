@@ -1,202 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>下载页面</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     html,
     body {
-        width: 100%;
-        height: 100%;
-        min-height: 600px;
-        min-width: 800px;
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      min-width: 800px;
     }
 
     .content {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, rgb(221, 221, 221), rgb(251, 251, 251));
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        rgb(221, 221, 221),
+        rgb(251, 251, 251)
+      );
     }
 
     .logo {
-        margin-left: 200px;
-        margin-top: 16px;
+      margin-left: 200px;
+      margin-top: 16px;
     }
 
     .container {
-        width: 100%;
-        margin: 20px auto 0;
-        display: flex;
-        align-items: center;
+      width: 100%;
+      margin: 20px auto 0;
+      display: flex;
+      align-items: center;
     }
 
-
     .appPage {
-        width: 600px;
-        padding-top: 100px;
+      width: 600px;
+      padding-top: 100px;
     }
 
     .divide {
-        height: 330px;
-        border: 1px solid rgb(216, 216, 216);
-        margin: 40px 60px;
-        display: inline-block;
+      height: 330px;
+      border: 1px solid rgb(216, 216, 216);
+      margin: 40px 60px;
+      display: inline-block;
     }
 
     .downLoadType,
     .typeItem {
-        list-style: none;
+      list-style: none;
     }
 
     .h2 {
-        color: #3a3a3a;
-        font-size: 42px;
-        font-family: ArialMT;
-        line-height: 1.4;
-
+      color: #3a3a3a;
+      font-size: 42px;
+      font-family: ArialMT;
+      line-height: 1.4;
     }
 
     .text {
-        color: #3a3a3a;
-        font-size: 17px;
-        line-height: 2.4;
+      color: #3a3a3a;
+      font-size: 17px;
+      line-height: 2.4;
     }
 
     .downLoadType {
-        margin-top: 30px;
+      margin-top: 30px;
     }
 
     .typeItem {
-        width: 200px;
-        height: 46px;
-        color: #135CD7;
-        font-family: ArialMT;
-        border: 1px solid #135CD7;
-        text-align: center;
-        line-height: 46px;
-        font-size: 15px;
-        margin-right: 20px;
-        margin-top: 20px;
+      width: 200px;
+      height: 46px;
+      color: #135cd7;
+      font-family: ArialMT;
+      border: 1px solid #135cd7;
+      text-align: center;
+      line-height: 46px;
+      font-size: 15px;
+      margin-right: 20px;
+      margin-top: 20px;
     }
 
     .typeItem:hover,
     .typeItem.active {
-        background: #135CD7;
-        color: #fff
+      background: #135cd7;
+      color: #fff;
     }
 
     .hide {
-        display: none !important;
+      display: none !important;
     }
 
     .qrCodeDiv {
-        width: 450px;
-        height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: url('./images/qrCodeBg.png') no-repeat center;
-        background-size: auto 100%;
+      width: 450px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('./images/qrCodeBg.png') no-repeat center;
+      background-size: auto 100%;
     }
 
     .left {
-        width: 600px;
-        height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      width: 600px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .android {
-        width: 450px;
-        height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: url('./images/qrCodeBg.png') no-repeat center;
-        background-size: auto 100%;
+      width: 450px;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('./images/qrCodeBg.png') no-repeat center;
+      background-size: auto 100%;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div class="content">
-        <a href="https://otcgo.cn"><img class="logo" height="70" src="./images/logo.svg" alt="logo"></a>
-        <div class="container">
-            <div class="left">
-                <div class="appPage">
-                    <img src="images/haobao.png" width="580" alt="haobao">
-                </div>
-                <div class="qrCodeDiv hide">
-                    <img src="./images/qrCode.png" alt="">
-                </div>
-                <div class="android hide">
-                    <img src="./images/android-qrcode.png" width="210" height="210">
-                </div>
-            </div>
-            <span class="divide"></span>
-            <div class="">
-                <h2 class="h2">SEA官方APP正式发布</h2>
-                <p class="text">选择一个你所需要的下载方式</p>
-                <ul id="downLoadType" class="downLoadType">
-                    <li data-type="ios" class="typeItem">iOS版本下载 密码: 123456</li>
-                    <li data-type="android" class="typeItem">安卓版本下载</li>
-                    <li data-type="win" class="typeItem">WINDOWS下载</li>
-                    <li data-type="mac" class="typeItem">MAC下载</li>
-                    <!-- <li data-type="local" class="typeItem">本地下载</li> -->
-                </ul>
-            </div>
+      <a href="https://otcgo.cn"
+        ><img class="logo" height="70" src="./images/logo.svg" alt="logo"
+      /></a>
+      <div class="container">
+        <div class="left">
+          <div class="appPage">
+            <img src="images/haobao.png" width="580" alt="haobao" />
+          </div>
+          <div class="qrCodeDiv hide">
+            <img src="./images/qrCode.png" alt="" />
+          </div>
+          <div class="android hide">
+            <img src="./images/android-qrcode.png" width="210" height="210" />
+          </div>
         </div>
+        <span class="divide"></span>
+        <div class="">
+          <h2 class="h2">SEA官方APP正式发布</h2>
+          <p class="text">选择一个你所需要的下载方式</p>
+          <ul id="downLoadType" class="downLoadType">
+            <!-- <li data-type="ios" class="typeItem">iOS版本下载 密码: 123456</li> -->
+            <li data-type="android" class="typeItem">
+              安卓版本下载 密码: 123456
+            </li>
+            <li data-type="win" class="typeItem">WINDOWS下载</li>
+            <li data-type="mac" class="typeItem">MAC下载</li>
+            <!-- <li data-type="local" class="typeItem">本地下载</li> -->
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
-<script>
-    window.onload = function () {
-        document.querySelector('#downLoadType').addEventListener('click', function (e) {
-            if (e.target.nodeName === 'LI') {
-                e.target.parentNode.querySelector('.active') && e.target.parentNode.querySelector('.active')
-                    .classList.remove('active');
-                e.target.classList.add('active');
-                var type = e.target.getAttribute('data-type');
-                var pagesDiv = document.querySelector('.appPage');
-                var qrCodeDiv = document.querySelector('.qrCodeDiv');
-                var android = document.querySelector('.android');
-                switch (type) {
-                    case 'ios':
-                        pagesDiv.classList.add('hide');
-                        qrCodeDiv.classList.remove('hide');
-                        android.classList.add('hide');
-                        //window.open("https://www.pgyer.com/TngD?sig=CNWpBxeW36zHH056M3bA6Ye1nLJgGcudNMRGOU2mZV6GIJvGPgUBeUTsHdakxtsq");     
-                        window.open("https://www.pgyer.com/D5pM");
-                        break;
-                    case 'android':
-                        pagesDiv.classList.add('hide');
-                        qrCodeDiv.classList.add('hide');
-                        android.classList.remove('hide');
-                        window.open("https://www.pgyer.com/mCWD");
-                        // location.href='https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk'
-                        break;
-                    case 'win':
-                        location.href = 'https://otcgo.oss-cn-beijing.aliyuncs.com/SEA-win32-x64.zip'
-                        break;
-                    case 'mac':
-                        location.href = 'https://otcgo.oss-cn-beijing.aliyuncs.com/APP.app.zip'
-                        break;
-                        // case 'local':
-                        //     pagesDiv.classList.remove('hide');
-                        //     qrCodeDiv.classList.add('hide');
-                        //     android.classList.add('hide');
-                        //     window.open("https://github.com/OTCGO/sea-app/releases");     
-                        //     break;
-                }
+  </body>
+  <script>
+    window.onload = function() {
+      document
+        .querySelector('#downLoadType')
+        .addEventListener('click', function(e) {
+          if (e.target.nodeName === 'LI') {
+            e.target.parentNode.querySelector('.active') &&
+              e.target.parentNode
+                .querySelector('.active')
+                .classList.remove('active');
+            e.target.classList.add('active');
+            var type = e.target.getAttribute('data-type');
+            var pagesDiv = document.querySelector('.appPage');
+            var qrCodeDiv = document.querySelector('.qrCodeDiv');
+            var android = document.querySelector('.android');
+            switch (type) {
+              case 'ios':
+                pagesDiv.classList.add('hide');
+                qrCodeDiv.classList.remove('hide');
+                android.classList.add('hide');
+                //window.open("https://www.pgyer.com/TngD?sig=CNWpBxeW36zHH056M3bA6Ye1nLJgGcudNMRGOU2mZV6GIJvGPgUBeUTsHdakxtsq");
+                window.open('https://www.pgyer.com/D5pM');
+                break;
+              case 'android':
+                pagesDiv.classList.add('hide');
+                qrCodeDiv.classList.add('hide');
+                android.classList.remove('hide');
+                window.open('https://www.pgyer.com/mCWD');
+                // location.href='https://github.com/OTCGO/sea-app/releases/download/1.0.0/sea-app-resealse-android-v1.0.0.apk'
+                break;
+              case 'win':
+                location.href =
+                  'https://otcgo.oss-cn-beijing.aliyuncs.com/SEA-win32-x64.zip';
+                break;
+              case 'mac':
+                location.href =
+                  'https://otcgo.oss-cn-beijing.aliyuncs.com/APP.app.zip';
+                break;
+              // case 'local':
+              //     pagesDiv.classList.remove('hide');
+              //     qrCodeDiv.classList.add('hide');
+              //     android.classList.add('hide');
+              //     window.open("https://github.com/OTCGO/sea-app/releases");
+              //     break;
             }
+          }
         });
     };
-</script>
-
+  </script>
 </html>
